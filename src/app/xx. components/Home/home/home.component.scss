@@ -1,0 +1,21 @@
+div.container {
+  display: flex;
+  flex-direction: row;
+}
+mat-card {
+  text-align: center;
+  margin: 15px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  margin: 5px;
+}
+
+a:first-child {
+  margin-top: 15px;
+}

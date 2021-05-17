@@ -1,0 +1,73 @@
+
+<div class="container">
+  <h1>
+    Proxy Pattern
+  </h1>
+  <div class="content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Use internet w/o proxy
+        </mat-card-title>
+        <mat-card-subtitle>
+          Standard connection
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button (click)="btnConnectToRealInternet()" color="primary">Connect</button>
+      </mat-card-actions>
+      <mat-card-content>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Visit site</mat-label>
+          <mat-select [(ngModel)]="selectedSite" (selectionChange)="selectionInternetChanged()">
+            <mat-option *ngFor="let site of listSites" [value]="site">
+              {{ site }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-footer>
+        <div *ngFor="let log of logsInternet">
+          {{log}}
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Use internet with proxy
+        </mat-card-title>
+        <mat-card-subtitle>
+          Before use you need to reset the internet
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <button mat-raised-button (click)="btnReset()" color="primary">Reset</button>
+        <button mat-raised-button (click)="btnAuthenticate()" color="primary">Authenticate</button>
+        <button mat-raised-button (click)="btnConnectToInternetWithProxy()" color="primary">Connect</button>
+      </mat-card-actions>
+      <mat-card-content>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Visit site</mat-label>
+          <mat-select [(ngModel)]="selectedSite" (selectionChange)="selectionProxyChanged()">
+            <mat-option *ngFor="let site of listSites" [value]="site">
+              {{ site }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-footer>
+        <div *ngFor="let log of logsProxy">
+          {{log}}
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+</div>

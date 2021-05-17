@@ -1,0 +1,16 @@
+button {
+  margin-bottom: 5px;
+}
+
+button:last-child {
+  margin-bottom: 0;
+}
+
+div {
+  text-align: center;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}

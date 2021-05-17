@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>
+    Template Method Pattern
+  </h1>
+  <div class="content">
+    <mat-card>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="btnGetReportForAthleticPerson()">Athletic person</button>
+        <button mat-raised-button color="primary" (click)="btnGetReportForLazyPerson()">Lazy person</button>
+      </mat-card-actions>
+      <mat-card-header>
+        <mat-card-title>
+          Report of morning routine
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let logs of listLogs">
+          - {{ logs }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
