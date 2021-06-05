@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Cat, NorwegianForest} from "../models/cat.model";
-import {Toy, AnyToy} from "../models/toy.model";
-import {CatAdapter} from "../models/cat.adapter";
+import { Component } from '@angular/core';
+import { BritishShortHair, Cat, NorwegianForest } from '../models/cat.model';
+import { Toy, AnyToy } from "../models/toy.model";
+import { CatAdapter } from "../models/cat.adapter";
 
 @Component({
   selector: 'app-adapter',
@@ -42,7 +42,7 @@ export class AdapterComponent {
     // inspired by
     // https://www.geeksforgeeks.org/adapter-pattern/
 
-    this.cat = new NorwegianForest();
+    this.cat = new BritishShortHair();
     this.toy = new AnyToy();
     this.catAdapter = new CatAdapter(this.cat);
   }

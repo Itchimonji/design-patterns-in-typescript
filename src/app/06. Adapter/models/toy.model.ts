@@ -1,4 +1,4 @@
-// target interface - toys dont hunt and only squeak
+// target interface
 export interface Toy {
   squeak(): string;
 }

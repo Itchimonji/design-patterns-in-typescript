@@ -27,6 +27,7 @@ export class PrototypeComponent implements OnInit {
   btnCopyLastCarWithNewColor(): void {
     const newCar: Prototype = this._cars[this._cars.length - 1].clone();
     newCar.color = this.selectedColor;
+    console.log(newCar);
     this._cars.push(newCar);
   }
 }

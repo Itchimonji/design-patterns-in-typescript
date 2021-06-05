@@ -3,7 +3,7 @@ import { Soldier } from '../models/soldier.model';
 import { SoldierComposite } from '../models/soldier.composite';
 import { SoldierLeaf } from '../models/soldier.leaf';
 
-// Resource: https://refactoring.guru/design-patterns/composite/typescript/example
+
 @Component({
   selector: 'app-composite',
   templateUrl: './composite.component.html',
@@ -17,6 +17,8 @@ export class CompositeComponent {
   private readonly officer1: SoldierComposite;
   private readonly officer2: SoldierComposite;
   private readonly officer3: SoldierComposite;
+
+  // Resource: https://refactoring.guru/design-patterns/composite/typescript/example
 
   constructor() {
     this.general = new SoldierComposite('Keanu Reeves');

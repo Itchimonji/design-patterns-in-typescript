@@ -1,11 +1,9 @@
-// inspired by https://stackoverflow.com/a/2707425
-
-export interface Pizza {
+export interface Burger {
   getPrice(): number;
   getTopping(): string;
 }
 
-class BasePizza implements Pizza {
+class BaseBurger implements Burger {
   protected price: number;
   protected topping: string;
 
@@ -18,26 +16,26 @@ class BasePizza implements Pizza {
   }
 }
 
-export class Margherita extends BasePizza implements Pizza {
+export class DoubleWhopper extends BaseBurger implements Burger {
   constructor() {
     super();
     this.price = 5.95;
-    this.topping = 'Pizza Margherita';
+    this.topping = 'Double Whopper';
   }
 }
 
-export class Detroit extends BasePizza implements Pizza {
+export class VeggieBurger extends BaseBurger implements Burger {
   constructor() {
     super();
     this.price = 7.99;
-    this.topping = 'Pizza Detroit';
+    this.topping = 'Veggie Burger';
   }
 }
 
-export class Fugazzeta extends BasePizza implements Pizza {
+export class BlackBeanBurger extends BaseBurger implements Burger {
   constructor() {
     super();
     this.price = 6.89;
-    this.topping = 'Pizza Fugazzeta';
+    this.topping = 'Black Bean Burger';
   }
 }

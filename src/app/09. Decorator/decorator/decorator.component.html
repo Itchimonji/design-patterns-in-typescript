@@ -5,28 +5,28 @@
   <div class="content">
     <mat-card>
       <mat-card-title>
-        Pizza Calculator
+        Burger Calculator
       </mat-card-title>
       <mat-card-subtitle>
         Current price: {{ price }}
       </mat-card-subtitle>
       <mat-divider></mat-divider>
       <mat-card-content>
-        <label id="radio-group"><b>Pick your favorite pizza</b></label>
+        <label id="radio-group"><b>Pick your favorite burger</b></label>
         <mat-radio-group
           aria-labelledby="radio-group"
-          [(ngModel)]="pizza">
-          <mat-radio-button class="example-radio-button" *ngFor="let pizza of pizzas" [value]="pizza">
-            <div>{{ pizza.getTopping() }}</div>
+          [(ngModel)]="burger">
+          <mat-radio-button class="example-radio-button" *ngFor="let burger of burgers" [value]="burger">
+            <div>{{ burger.getTopping() }}</div>
           </mat-radio-button>
         </mat-radio-group>
       </mat-card-content>
-      <mat-card-actions *ngIf="pizza != null">
+      <mat-card-actions *ngIf="burger != null">
         <button mat-raised-button color="primary" (click)="btnCheese()">With cheese</button>
-        <button mat-raised-button color="primary" (click)="btnMushrooms()">With mushrooms</button>
+        <button mat-raised-button color="primary" (click)="btnMushrooms()">With beef</button>
         <button mat-raised-button color="primary" (click)="btnJalapeno()">With jalapeno</button>
         <button mat-raised-button color="primary" (click)="btnCheeseAndJalapeno()">With cheese & jalapeno</button>
-        <button mat-raised-button color="primary" (click)="btnCheeseAndMushrooms()">With cheese & mushrooms</button>
+        <button mat-raised-button color="primary" (click)="btnCheeseAndMushrooms()">With cheese & beef</button>
         <button mat-raised-button color="primary" (click)="btnExtraCheese()">With extra cheese</button>
         <button mat-raised-button color="primary" (click)="btnHotJalapeno()">With hot jalapeno</button>
       </mat-card-actions>

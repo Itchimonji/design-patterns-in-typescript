@@ -1,9 +1,9 @@
 import { ExtraCheeseToppingDecorator, JalapenoToppingDecorator } from './topping.decorator';
-import { Pizza } from './pizza.model';
+import { Burger } from './burger.model';
 
-export class ExtraExtraCheeseToppingDecorator extends ExtraCheeseToppingDecorator implements Pizza {
-  constructor(pizzaToDecorate: Pizza) {
-    super(pizzaToDecorate);
+export class ExtraExtraCheeseToppingDecorator extends ExtraCheeseToppingDecorator implements Burger {
+  constructor(burgerToDecorate: Burger) {
+    super(burgerToDecorate);
   }
 
   public getPrice(): number {
@@ -15,9 +15,9 @@ export class ExtraExtraCheeseToppingDecorator extends ExtraCheeseToppingDecorato
   }
 }
 
-export class HotJalapenoToppingDecorator extends JalapenoToppingDecorator implements Pizza {
-  constructor(pizzaToDecorate: Pizza) {
-    super(pizzaToDecorate);
+export class HotJalapenoToppingDecorator extends JalapenoToppingDecorator implements Burger {
+  constructor(burgerToDecorate: Burger) {
+    super(burgerToDecorate);
   }
 
   public getPrice(): number {

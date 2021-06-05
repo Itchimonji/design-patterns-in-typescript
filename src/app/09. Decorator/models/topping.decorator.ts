@@ -1,53 +1,53 @@
-import { Pizza } from './pizza.model';
+import { Burger } from './burger.model';
 
-export class ExtraCheeseToppingDecorator implements Pizza {
+export class ExtraCheeseToppingDecorator implements Burger {
   protected readonly priceCheese: number = 1.3;
-  protected pizza: Pizza;
+  protected burger: Burger;
 
-  constructor(pizzaToDecorate: Pizza) {
-    this.pizza = pizzaToDecorate;
+  constructor(burgerToDecorate: Burger) {
+    this.burger = burgerToDecorate;
   }
 
   public getPrice(): number {
-    return this.pizza.getPrice() + this.priceCheese;
+    return this.burger.getPrice() + this.priceCheese;
   }
 
   public getTopping(): string {
-    return this.pizza.getTopping() + '.. with extra cheese';
+    return this.burger.getTopping() + '.. with extra cheese';
   }
 }
 
-export class MushroomToppingDecorator implements Pizza {
-  protected readonly priceMushrooms: number = 0.9;
-  protected pizza: Pizza;
+export class BeefToppingDecorator implements Burger {
+  protected readonly priceBeef: number = 0.9;
+  protected burger: Burger;
 
-  constructor(pizzaToDecorate: Pizza) {
-    this.pizza = pizzaToDecorate;
+  constructor(burgerToDecorate: Burger) {
+    this.burger = burgerToDecorate;
   }
 
   public getPrice(): number {
-    return this.pizza.getPrice() + this.priceMushrooms;
+    return this.burger.getPrice() + this.priceBeef;
   }
 
   public getTopping(): string {
-    return this.pizza.getTopping() + '.. with extra mushrooms';
+    return this.burger.getTopping() + '.. with extra beef';
   }
 }
 
-export class JalapenoToppingDecorator implements Pizza {
+export class JalapenoToppingDecorator implements Burger {
   protected readonly priceJalapeno: number = 1.5;
-  protected pizza: Pizza;
+  protected burger: Burger;
 
-  constructor(pizzaToDecorate: Pizza) {
-    this.pizza = pizzaToDecorate;
+  constructor(burgerToDecorate: Burger) {
+    this.burger = burgerToDecorate;
   }
 
   public getPrice(): number {
-    return this.pizza.getPrice() + this.priceJalapeno;
+    return this.burger.getPrice() + this.priceJalapeno;
   }
 
   public getTopping(): string {
-    return this.pizza.getTopping() + '.. with extra jalapeno';
+    return this.burger.getTopping() + '.. with extra jalapeno';
   }
 
   public extraHot(): number {

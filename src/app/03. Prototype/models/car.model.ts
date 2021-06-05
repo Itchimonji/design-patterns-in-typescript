@@ -18,7 +18,6 @@ export class CarPrototype implements Prototype {
   }
 
   public clone(): Prototype {
-    // https://stackoverflow.com/a/53442750/14427814
     return Object.assign(Object.create(this), this);
   }
 }

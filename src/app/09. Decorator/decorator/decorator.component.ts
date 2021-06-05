@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Margherita, Pizza, Detroit, Fugazzeta } from '../models/pizza.model';
+import { Component,  } from '@angular/core';
 import {
+  BeefToppingDecorator,
   ExtraCheeseToppingDecorator,
   JalapenoToppingDecorator,
-  MushroomToppingDecorator
 } from '../models/topping.decorator';
-import {ExtraExtraCheeseToppingDecorator, HotJalapenoToppingDecorator} from '../models/extend-topping.decorator';
+import { ExtraExtraCheeseToppingDecorator, HotJalapenoToppingDecorator} from '../models/extend-topping.decorator';
+import {BlackBeanBurger, Burger, DoubleWhopper, VeggieBurger} from '../models/burger.model';
 
 @Component({
   selector: 'app-decorator',
@@ -15,68 +15,68 @@ import {ExtraExtraCheeseToppingDecorator, HotJalapenoToppingDecorator} from '../
 export class DecoratorComponent {
   public price: number;
   public toppings: string[];
-  public pizzas: Pizza[];
+  public burgers: Burger[];
 
-  public pizza: Pizza;
+  public burger: Burger;
 
   constructor() {
     this.price = 0;
     this.toppings = new Array<string>();
-    this.initPizzas();
+    this.initBurgers();
   }
 
   // normal toppings
 
   public btnCheese(): void {
-    const decorator = new ExtraCheeseToppingDecorator(this.pizza);
+    const decorator = new ExtraCheeseToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
 
   public btnMushrooms(): void {
-    const decorator = new MushroomToppingDecorator(this.pizza);
+    const decorator = new BeefToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
 
   public btnJalapeno(): void {
-    const decorator = new JalapenoToppingDecorator(this.pizza);
+    const decorator = new JalapenoToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
 
   // composition toppings
 
   public btnCheeseAndJalapeno(): void {
-    const cheeseDecorator = new ExtraCheeseToppingDecorator(this.pizza);
+    const cheeseDecorator = new ExtraCheeseToppingDecorator(this.burger);
     const cheeseAndJalapenoDecorator = new JalapenoToppingDecorator(cheeseDecorator);
     this.logOrder(cheeseAndJalapenoDecorator);
   }
 
   public btnCheeseAndMushrooms(): void {
-    const cheeseDecorator = new ExtraCheeseToppingDecorator(this.pizza);
-    const cheeseAndMushroomDecorator = new MushroomToppingDecorator(cheeseDecorator);
+    const cheeseDecorator = new ExtraCheeseToppingDecorator(this.burger);
+    const cheeseAndMushroomDecorator = new BeefToppingDecorator(cheeseDecorator);
     this.logOrder(cheeseAndMushroomDecorator);
   }
 
   // inherited toppings
 
   public btnExtraCheese(): void {
-    const decorator = new ExtraExtraCheeseToppingDecorator(this.pizza);
+    const decorator = new ExtraExtraCheeseToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
 
   public btnHotJalapeno(): void {
-    const decorator = new HotJalapenoToppingDecorator(this.pizza);
+    const decorator = new HotJalapenoToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
 
-  private logOrder(decorator: Pizza) {
+  private logOrder(decorator: Burger) {
     this.price = decorator.getPrice();
     this.toppings.push(decorator.getTopping());
   }
 
-  private initPizzas() {
-    this.pizzas = new Array<Pizza>();
-    this.pizzas.push(new Margherita());
-    this.pizzas.push(new Detroit());
-    this.pizzas.push(new Fugazzeta());
+  private initBurgers() {
+    this.burgers = new Array<Burger>();
+    this.burgers.push(new VeggieBurger());
+    this.burgers.push(new DoubleWhopper());
+    this.burgers.push(new BlackBeanBurger());
   }
 }

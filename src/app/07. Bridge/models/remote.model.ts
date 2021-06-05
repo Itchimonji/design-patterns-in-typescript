@@ -8,7 +8,7 @@ export interface Abstraction {
   channelUp(): number;
 }
 
-export interface RefinedAbstraction extends Abstraction{
+export interface RefinedAbstraction extends Abstraction {
   mute(): number;
 }
 
@@ -26,22 +26,26 @@ export class RemoteControl implements Abstraction {
 
   public volumeDown(): number {
     const currentVolume: number = this.device.getVolume();
-    return currentVolume >= 1 ? this.device.setVolume(currentVolume - 1) : this.device.setVolume(0);
+    return currentVolume >=
+    1 ? this.device.setVolume(currentVolume - 1) : this.device.setVolume(0);
   }
 
   public volumeUp(): number {
     const currentVolume: number = this.device.getVolume();
-    return currentVolume <= 99 ? this.device.setVolume(currentVolume + 1) : this.device.setVolume(100);
+    return currentVolume <=
+    99 ? this.device.setVolume(currentVolume + 1) : this.device.setVolume(100);
   }
 
   public channelDown(): number {
     const currentChannel: number = this.device.getChannel();
-    return currentChannel >= 1 ? this.device.setChannel(currentChannel - 1) : this.device.setChannel(0);
+    return currentChannel >=
+    1 ? this.device.setChannel(currentChannel - 1) : this.device.setChannel(0);
   }
 
   public channelUp(): number {
     const currentChannel: number = this.device.getChannel();
-    return currentChannel <= 99 ? this.device.setChannel(currentChannel + 1) : this.device.setChannel(0);
+    return currentChannel <=
+    99 ? this.device.setChannel(currentChannel + 1) : this.device.setChannel(0);
   }
 }
 
