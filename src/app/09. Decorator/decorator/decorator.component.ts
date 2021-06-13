@@ -32,7 +32,7 @@ export class DecoratorComponent {
     this.logOrder(decorator);
   }
 
-  public btnMushrooms(): void {
+  public btnBeef(): void {
     const decorator = new BeefToppingDecorator(this.burger);
     this.logOrder(decorator);
   }
@@ -50,10 +50,10 @@ export class DecoratorComponent {
     this.logOrder(cheeseAndJalapenoDecorator);
   }
 
-  public btnCheeseAndMushrooms(): void {
+  public btnCheeseAndBeef(): void {
     const cheeseDecorator = new ExtraCheeseToppingDecorator(this.burger);
-    const cheeseAndMushroomDecorator = new BeefToppingDecorator(cheeseDecorator);
-    this.logOrder(cheeseAndMushroomDecorator);
+    const cheeseAndBeefDecorator = new BeefToppingDecorator(cheeseDecorator);
+    this.logOrder(cheeseAndBeefDecorator);
   }
 
   // inherited toppings

@@ -1,7 +1,8 @@
 import { ExtraCheeseToppingDecorator, JalapenoToppingDecorator } from './topping.decorator';
 import { Burger } from './burger.model';
 
-export class ExtraExtraCheeseToppingDecorator extends ExtraCheeseToppingDecorator implements Burger {
+export class ExtraExtraCheeseToppingDecorator
+  extends ExtraCheeseToppingDecorator implements Burger {
   constructor(burgerToDecorate: Burger) {
     super(burgerToDecorate);
   }
