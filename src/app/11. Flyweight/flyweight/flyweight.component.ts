@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Pen} from '../models/pen.model';
-import {PenFactory} from '../models/pen.factory';
-import {Md5} from 'ts-md5';
+import { Component } from '@angular/core';
+import { Pen } from '../models/pen.model';
+import { PenFactory } from '../models/pen.factory';
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-flyweight',
@@ -22,15 +22,15 @@ export class FlyweightComponent {
   }
 
   public selectThickPen(): void {
-    this.selectedPen = PenFactory.getThickPen(this.selectedColor);
+    this.selectedPen = PenFactory.getWideBrush(this.selectedColor);
   }
 
   public selectThinPen(): void {
-    this.selectedPen = PenFactory.getThinPen(this.selectedColor);
+    this.selectedPen = PenFactory.getSlimBrush(this.selectedColor);
   }
 
   public selectMediumPen(): void {
-    this.selectedPen = PenFactory.getMediumPen(this.selectedColor);
+    this.selectedPen = PenFactory.getMediumBrush(this.selectedColor);
   }
 
   public selectColor(): void {

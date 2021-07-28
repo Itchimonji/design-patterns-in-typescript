@@ -1,49 +1,49 @@
-import { MediumPen, Pen, ThickPen, ThinPen } from './pen.model';
+import { MediumBrush, Pen, SlimBrush, WideBrush} from './pen.model';
 
-interface IHash {
-  [details: string]: Pen;
+interface IHashMap {
+  [key: string]: Pen;
 }
 
 // Flyweight-Factory
 export class PenFactory {
-  private static pensMap: IHash = {};
+  private static pensMap: IHashMap = {};
 
-  public static getThickPen(color: string): Pen {
-    const key: string = color + '-THICK';
+  public static getWideBrush(color: string): Pen {
+    const key: string = color + '-WideBrush';
 
     if (this.pensMap[key] != null) {
       return this.pensMap[key];
-    } else {
-      const pen: Pen = new ThickPen();
-      pen.setColor(color);
-      this.pensMap[key] = pen;
-      return pen;
     }
+
+    const pen: Pen = new WideBrush();
+    pen.setColor(color);
+    this.pensMap[key] = pen;
+    return pen;
   }
 
-  public static getThinPen(color: string): Pen {
-    const key: string = color + '-THIN';
+  public static getSlimBrush(color: string): Pen {
+    const key: string = color + '-SlimBrush';
 
     if (this.pensMap[key] != null) {
       return this.pensMap[key];
-    } else {
-      const pen: Pen = new ThinPen();
-      pen.setColor(color);
-      this.pensMap[key] = pen;
-      return pen;
     }
+
+    const pen: Pen = new SlimBrush();
+    pen.setColor(color);
+    this.pensMap[key] = pen;
+    return pen;
   }
 
-  public static getMediumPen(color: string): Pen {
-    const key: string = color + '-MEDIUM';
+  public static getMediumBrush(color: string): Pen {
+    const key: string = color + '-MediumBrush';
 
     if (this.pensMap[key] != null) {
       return this.pensMap[key];
-    } else {
-      const pen: Pen = new MediumPen();
-      pen.setColor(color);
-      this.pensMap[key] = pen;
-      return pen;
     }
+
+    const pen: Pen = new MediumBrush();
+    pen.setColor(color);
+    this.pensMap[key] = pen;
+    return pen;
   }
 }

@@ -8,8 +8,6 @@ import { FiftyHandler, FiveHandler, HundredHandler, OneHandler, TenHandler, Thre
 })
 export class ChainOfResponsibilityComponent {
 
-  // inspired by https://refactoring.guru/design-patterns/chain-of-responsibility/typescript/example
-
   public randomNumber: number;
   public result: string;
 

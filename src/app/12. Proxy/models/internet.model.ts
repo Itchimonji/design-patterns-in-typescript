@@ -9,7 +9,7 @@ export class RealInternet implements Internet {
   public connect(): boolean {
     console.log('connect to the internet...');
     this.isConnected = true;
-    return true;
+    return this.isConnected;
   }
 
   public visitSite(site: string): boolean {
@@ -25,7 +25,9 @@ export interface ProxyInternet extends Internet {
 
 export class Proxy implements ProxyInternet {
   readonly password: string = 'top-secret';
-  readonly blackList: string[] = ['www.123.com', 'www.abc.com', 'www.you-can-not-pass.com'];
+  readonly blackList: string[] = ['www.123.com',
+                                  'www.abc.com',
+                                  'www.you-can-not-pass.com'];
 
   private internet: Internet;
   private isAuthenticated: boolean;

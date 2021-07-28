@@ -6,41 +6,53 @@ export interface Pen {
   draw(content: string): string;
 }
 
-export class ThickPen implements Pen {
-  private readonly brushSize = BrushSize.THICK; // intrinsic state - shareable
-  private color: string; // extrinsic state - supplied by client
+export class WideBrush implements Pen {
+  // intrinsic state - shareable
+  private readonly brushSize = BrushSize.WIDE;
+
+  // extrinsic state - supplied by client
+  private color: string;
 
   public setColor(color: string): void {
     this.color = color;
   }
 
   public draw(content: string): string {
-    return 'Draw THICK content "' + content + '" in color ' + this.color;
+    return 'Draw WIDE content "' + content +
+      '" in color ' + this.color;
   }
 }
 
-export class ThinPen implements Pen {
-  private readonly brushSize = BrushSize.THIN; // intrinsic state - shareable
-  private color: string; // extrinsic state - supplied by client
+export class SlimBrush implements Pen {
+  // intrinsic state - shareable
+  private readonly brushSize = BrushSize.SLIM;
+
+  // extrinsic state - supplied by client
+  private color: string;
 
   public setColor(color: string): void {
     this.color = color;
   }
 
   public draw(content: string): string {
-    return 'Draw THIN content "' + content + '" in color ' + this.color;
+    return 'Draw SMALL content "' + content +
+      '" in color ' + this.color;
   }
 }
 
-export class MediumPen implements Pen {
-  private readonly brushSize = BrushSize.MEDIUM; // intrinsic state - shareable
-  private color: string; // extrinsic state - supplied by client
+export class MediumBrush implements Pen {
+  // intrinsic state - shareable
+  private readonly brushSize = BrushSize.MEDIUM;
+
+  // extrinsic state - supplied by client
+  private color: string;
 
   public setColor(color: string): void {
     this.color = color;
   }
 
   public draw(content: string): string {
-    return 'Draw MEDIUM content "' + content + '" in color ' + this.color;
+    return 'Draw MEDIUM content "' + content +
+      '" in color ' + this.color;
   }
 }

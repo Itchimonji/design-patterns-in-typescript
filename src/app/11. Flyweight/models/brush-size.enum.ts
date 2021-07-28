@@ -1,5 +1,5 @@
 export enum BrushSize {
-  THIN,
+  SLIM,
   MEDIUM,
-  THICK
+  WIDE
 }
