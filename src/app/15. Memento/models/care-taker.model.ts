@@ -1,5 +1,5 @@
 import { Memento } from './memento.model';
-import { Orginator } from './orginator.model';
+import { Originator } from './originator.model';
 
 export interface CareTaker {
   backUp(): void;
@@ -9,14 +9,14 @@ export interface CareTaker {
 
 export class ConcreteCareTaker implements CareTaker {
   private listMemento: Memento[] = [];
-  private orginator: Orginator;
+  private originator: Originator;
 
-  constructor(orginator: Orginator) {
-    this.orginator = orginator;
+  constructor(originator: Originator) {
+    this.originator = originator;
   }
 
   public backUp(): void {
-    this.listMemento.push(this.orginator.saveState());
+    this.listMemento.push(this.originator.saveState());
   }
 
   public undo(): void {
@@ -25,7 +25,7 @@ export class ConcreteCareTaker implements CareTaker {
     }
 
     const memento: Memento = this.listMemento.pop();
-    this.orginator.restoreState(memento);
+    this.originator.restoreState(memento);
   }
 
   public history(): Memento[] {

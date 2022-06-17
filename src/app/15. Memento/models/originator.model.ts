@@ -1,7 +1,7 @@
 import { Card, MatCard } from './card.model';
 import { ConcreteMemento, Memento } from './memento.model';
 
-export interface Orginator {
+export interface Originator {
   changeTitle(value: string): void;
   changeDescription(value: string): void;
   changeColor(value: string): void;
@@ -10,7 +10,7 @@ export interface Orginator {
 }
 
 /* responsibility for state handling */
-export class ConcreteOrginator implements Orginator {
+export class ConcreteOriginator implements Originator {
   private currentState: Card;
 
   constructor(state: Card) {
