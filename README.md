@@ -1,5 +1,6 @@
 # Design Patterns In Angular
 
+- Run `npm install` to install the needed npm packages
 - Run `ng serve` for a dev server. Navigate to `http://localhost:4201/`
 - Run `ng generate module singleton --route singleton --module app.module` to create a feature module with routing
 
