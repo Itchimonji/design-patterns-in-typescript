@@ -306,4 +306,5 @@
 - Design Patterns by GoF
 - https://refactoring.guru/
 - https://www.geeksforgeeks.org/
+- https://www.scaler.com/topics/
 
